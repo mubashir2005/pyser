@@ -1,0 +1,1 @@
+The Privatest Browser ever made. No tracking at all. No history. Browse anonymously without worrying.

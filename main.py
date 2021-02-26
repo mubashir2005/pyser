@@ -37,12 +37,17 @@ class MainWindow(QMainWindow):
         self.url_bar.returnPressed.connect(self.navigate_web)
         navbar.addWidget(self.url_bar)
 
+        self.browser.urlChanged.connect(self.update_url)
+
     def navigate_home(self):
         self.browser.setUrl(QUrl('http://duckduckgo.com'))
 
     def navigate_web(self):
         url = self.url_bar.text()
         self.browser.setUrl(QUrl(f'http://{url}'))
+
+    def update_url(self, url):
+        self.url_bar.setText(url.toString())
 
 
 app = QApplication(sys.argv)
